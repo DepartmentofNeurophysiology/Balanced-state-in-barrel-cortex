@@ -1,6 +1,6 @@
 # Balanced-state-in-barrel-cortex
 
-network_simulation.py -- runs the simulation for the model  
+network_simulation.py   -- runs the simulation for the model  
                       -- requires parameters_adi.py script for loading neuron numbers and connection probabilities  
 
 parameters_adi.py     -- asks a user input for the network configuration (r) and corresponding excitatory (e) and inhibitory (i) neuron numbers 
