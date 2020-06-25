@@ -11,6 +11,7 @@ import random
 from IPython import get_ipython
 get_ipython().run_line_magic('matplotlib', 'inline') # plotting in Ipython console
 get_ipython().run_line_magic('matplotlib', 'qt') # plotting in external window
+
 import mpl_toolkits.mplot3d
 import matplotlib
 import matplotlib.ticker
@@ -18,13 +19,14 @@ import numpy as np
 import scipy as sp
 from scipy import signal
 import pickle
+
 from brian2 import*
 from brian2.core.network import TextReport
 
 prefs.codegen.target = "numpy" # avoid error message during code compilation
 
 #%% Parameters
-import parameters_adi
+import parameters_adi # load parameters file
 
 parameters_adi.neuron_num() # neuron numbers from README.md
 parameters_adi.prob_vals() # network upscaling probablilty values
@@ -229,6 +231,7 @@ spikemon_23_e = SpikeMonitor(layer_23_e)
 spikemon_23_i = SpikeMonitor(layer_23_i)
 
 store() # stores initial state of the network
+
 #%% Run network simulation for different inhibitory strengths
 
 BrianLogger.log_level_debug()
@@ -249,23 +252,23 @@ for g in gvariable:
     # synaptic strength
     # L4
     Jee_4 = 0.18*mV
-    Jei_4 = -g*1.8*mV
+    Jei_4 = -g*1.8*mV # original scaling = -g * 0.18 mV
     Jie_4 = 0.54*mV
-    Jii_4 = -g*1.8*mV
+    Jii_4 = -g*1.8*mV # original scaling = -g * 0.18 mV
     # L2/3
     Jee_23 = 0.18*mV
-    Jei_23 = -g*1.8*mV
+    Jei_23 = -g*1.8*mV # original scaling = -g * 0.18 mV
     Jie_23 = 0.54*mV
-    Jii_23 = -g*1.8*mV
+    Jii_23 = -g*1.8*mV # original scaling = -g * 0.18 mV
     # Thalamus --> layer 4
-    Jex_4 = 0.50*mV
-    Jix_4 = 0.50*mV
+    Jex_4 = 0.50*mV # original value = 0.54 mV
+    Jix_4 = 0.50*mV # original value = 0.54 mV
     # Between layers
     Je_4_23 = 0.18*mV
     Ji_4_23 = 0.18*mV
     
     # Input rate
-    r = 70 # entered manually after each for loop
+    r = 0 # entered manually after each for loop
     
     # Define input rate
     input_rate = r*Hz
