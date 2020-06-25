@@ -3,8 +3,6 @@
 Balanced state simulation Parameters
 Neuron numbers
 Probability values
-Projection distribution
-Random numbers
 
 """
 #%% Neurons in each layer - check README.md for configuration values
