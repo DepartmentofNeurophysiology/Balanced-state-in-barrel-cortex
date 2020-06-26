@@ -18,3 +18,9 @@ parameters_adi.py
                             r = 5  
                                   L4   : n_e_4 = 1374 ; n_i_4 = 274  
                                   L2/3 : n_e_23 = 2232 ; n_i_23 = 446  
+                                  
+  firingfreq_analysis.py  
+  calculates the firing rates of the balanced network model  
+    
+  cv_analysis.py  
+  calculates the coefficient of variation of the balanced network model  
