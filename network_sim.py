@@ -24,7 +24,7 @@ from brian2.core.network import TextReport
 prefs.codegen.target = "numpy" # avoid error message during code compilation
 
 #%% Parameters
-import parameters_sim # 
+import parameters_sim
 
 parameters_sim.neuron_num() # neuron numbers from README.md
 parameters_sim.prob_vals() # network upscaling probablilty values
